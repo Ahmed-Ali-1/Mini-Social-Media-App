@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Social Media App</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body>
+
+    <!-- Dark/Light Mode Toggle -->
+    <button id="themeToggle" class="theme-btn">Toggle Dark/Light Mode</button>
+
+    <!-- Signup Page -->
+    <div class="container" id="signupPage">
+        <h2>Signup</h2>
+        <input type="text" id="signupName" placeholder="Name">
+        <input type="email" id="signupEmail" placeholder="Email">
+        <input type="password" id="signupPassword" placeholder="Password">
+        <button onclick="signup()">Signup</button>
+        <p>Already have an account? <span onclick="showLogin()">Login</span></p>
+    </div>
+
+    <!-- Login Page -->
+    <div class="container hidden" id="loginPage">
+        <h2>Login</h2>
+        <input type="email" id="loginEmail" placeholder="Email">
+        <input type="password" id="loginPassword" placeholder="Password">
+        <button onclick="login()">Login</button>
+        <p>Don't have an account? <span onclick="showSignup()">Signup</span></p>
+    </div>
+
+    <!-- Feed Page -->
+    <div class="feed-page hidden" id="feedPage">
+
+        <!-- Header -->
+        <header>
+            <div class="header-left">
+                <button onclick="showHome()">Home</button>
+                <button onclick="showDashboard()">Dashboard</button>
+            </div>
+            <div class="header-right">
+                <span id="welcomeUser"></span>
+                <button onclick="logout()">Logout</button>
+            </div>
+        </header>
+
+        <!-- Content Area -->
+        <div class="content-area">
+
+            <!-- Home Section -->
+            <div id="homeSection">
+                <div class="top-bar">
+                    <input type="text" id="searchInput" placeholder="Search posts..." onkeyup="searchPosts()">
+                    <select id="sortSelect" onchange="sortPosts()">
+                        <option value="latest">Latest First</option>
+                        <option value="oldest">Oldest First</option>
+                        <option value="liked">Most Liked</option>
+                    </select>
+                </div>
+                <div id="postsContainer"></div>
+            </div>
+
+            <!-- Dashboard Section -->
+            <div id="dashboardSection" class="hidden">
+                <button class="create-post-btn" onclick="openModal()">Create Post</button>
+                <div id="dashboardPosts"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for creating post -->
+    <div id="postModal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h3>Create a Post</h3>
+            <textarea id="modalPostText" placeholder="Write something..."></textarea>
+            <input type="text" id="modalPostImage" placeholder="Image URL (optional)">
+            <button onclick="createPostFromModal()">Post</button>
+        </div>
+    </div>
+
+    <script src="./assets/js/script.js"></script>
+</body>
+
+</html>
