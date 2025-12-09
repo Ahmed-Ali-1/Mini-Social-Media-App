@@ -2,15 +2,18 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Mini Social Media - Header</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
     <link rel="stylesheet" href="./assets/css/style.css">
+
+
 </head>
 
 <body>
+
     <header class="app-header">
 
         <div class="logoDiv">
@@ -19,8 +22,8 @@
         </div>
 
         <nav class="navbarMain" aria-label="Main navigation">
-            <a href="" class="active">Home</a>
-            <a href="./dashboard.html">Dashboard</a>
+            <a href="./index.html">Home</a>
+            <a href="./dashboard.html" class="active">Dashboard</a>
             <div class="user-block" id="userBlock">
                 <span id="welcomeText">Hello</span>
                 <button id="logoutBtn" style="display:none;">Logout</button>
@@ -39,11 +42,13 @@
     </header>
 
     <main>
-        <section class="all-post-section wrapper">
+        <section class="Dashboard wrapper">
             <div class="dashboardDiv">
-                <h1>All Post</h1>
+                <h1>Your Dashboard</h1>
                 <div>
+                    <button id="openBtn" class="create-btn" onclick="openCreatePostModal()">+ Create Post</button>
                     <input type="text" id="searchInput" class="search" placeholder="Search posts...">
+
                     <select id="sortSelect" class="filter">
                         <option value="latest">Latest First</option>
                         <option value="oldest">Oldest First</option>
@@ -51,10 +56,31 @@
                     </select>
                 </div>
             </div>
-            <div class="allPostContainer">
 
+
+            <div id="modal" class="modal">
+                <div class="modal-box">
+                    <div class="modalHeading">
+                        <h2 id="modalHeading">Create Post</h2>
+                        <button id="closeCreateBtn"><i class="fa-solid fa-x"></i></button>
+                    </div>
+
+                    <input type="text" id="postTitle" placeholder="Title">
+                    <textarea id="postDescription" placeholder="Description" rows="6"></textarea>
+                    <input type="text" id="postImage" placeholder="Image URL">
+
+                    <div class="modalBtnDiv">
+                        <button id="closeCreateBtn">Cancel</button>
+                        <button id="postBtn" onclick="postModal()">Post</button>
+                    </div>
+
+                </div>
             </div>
 
+            <div class="postContainer">
+            </div>
+
+            <!-- MODAL -->
             <div id="commentModal">
                 <div class="commentModalBox">
                     <h3>Comments</h3>
