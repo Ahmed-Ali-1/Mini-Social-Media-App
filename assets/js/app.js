@@ -70,7 +70,10 @@ function postModal() {
   let postImage = document.getElementById("postImage").value;
 
   if (!postTitle || !postDescription) {
-    alert("Please enter title and description!");
+    Swal.fire({
+      text: "Please enter title and description!",
+      icon: "question",
+    });
     return;
   }
 
@@ -236,9 +239,32 @@ function loadAllPosts() {
 
 // ---------------- DELETE POST ----------------
 function onePostDelete(id) {
-  allPosts = allPosts.filter((p) => p.id !== id);
-  localStorage.setItem("post", JSON.stringify(allPosts));
-  renderAll();
+  Swal.fire({
+    title: "Are you sure?",
+    text: "You won't be able to revert this!",
+    icon: "warning",
+    showCancelButton: true, // <-- ye add karein
+    confirmButtonColor: "#3085d6",
+    cancelButtonColor: "#d33",
+    confirmButtonText: "Yes, delete it!",
+    cancelButtonText: "Cancel",
+  }).then((result) => {
+    if (result.isConfirmed) {
+      // POST DELETE LOGIC YAHAN HI
+      allPosts = allPosts.filter((p) => p.id !== id);
+      localStorage.setItem("post", JSON.stringify(allPosts));
+      renderAll();
+
+      Swal.fire({
+        title: "Deleted!",
+        text: "Your post has been deleted.",
+        icon: "success",
+        timer: 1500,
+        showConfirmButton: false,
+      });
+    }
+    // Agar cancel pe click hua to kuch nahi hoga
+  });
 }
 
 // ---------------- EDIT POST ----------------
@@ -343,3 +369,6 @@ function renderAll() {
 
 // ---------------- INITIAL LOAD ----------------
 renderAll();
+
+
+

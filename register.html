@@ -4,21 +4,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Signup</title>
+    <link rel="stylesheet" href="./assets/css/signUp.css">
+
 </head>
 
 <body>
+
     <form action="" id="registerForm">
-        <h2>Register</h2>
+        <h2>Create Account</h2>
+        <p>Join us and start your journey</p>
+
         <input type="text" placeholder="Name" required id="name" />
         <input type="email" placeholder="Email" required id="username">
         <input type="password" placeholder="Password" required id="password">
         <input type="password" placeholder="Confirm Password" required id="confirmPassword">
-        <button type="submit">Resgister</button>
-        <a href="login.html">Go to Login</a>
+
+        <button type="submit">Sign Up</button>
+
+        <p class="login-link">Already have an account? <a href="login.html">Login</a></p>
     </form>
-
-
 
     <script>
         document.getElementById("registerForm").addEventListener("submit", function (event) {
@@ -30,16 +35,23 @@
             var confirmPassword = document.getElementById("confirmPassword").value
 
             if (password !== confirmPassword) {
-                alert("Password do not match")
+                Swal.fire({
+                    icon: "error",
+                    title: "Oops...",
+                    text: "Password do not Match!",
+                });
                 return
-
             }
 
             let users = JSON.parse(localStorage.getItem("users")) || [];
 
             let exists = users.find(u => u.email === email);
             if (exists) {
-                alert("Email already registered!");
+                Swal.fire({
+                    icon: "error",
+                    title: "Oops...",
+                    text: "Email already registered!",
+                });
                 return;
             }
 
@@ -53,10 +65,17 @@
             users.push(newUser);
 
             localStorage.setItem("users", JSON.stringify(users))
-            alert("Register successfull Please login");
-            window.location.href = "login.html"
+            Swal.fire({
+                text: "Register successfully! Please login.",
+                icon: "success",
+                draggable: true
+            }).then(() => {
+                window.location.href = "login.html";
+            });
+
         })
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 
 </html>

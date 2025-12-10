@@ -4,18 +4,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Login</title>
+    <link rel="stylesheet" href="./assets/css/login.css">
+
+
 </head>
 
 <body>
+
     <form action="" id="loginForm">
         <h2>Login</h2>
-        <input type="email" placeholder="Email" required id="username">
-        <input type="password" placeholder="password" required id="password">
-        <button type="submit">Login</button>
-        <a href="register.html">Go to Register</a>
-    </form>
 
+        <input type="email" placeholder="Email" required id="username">
+        <input type="password" placeholder="Password" required id="password">
+
+        <button type="submit">Login</button>
+
+        <span class="register-link">Don't have an account? <a href="register.html">Sign Up</a></span>
+    </form>
 
     <script>
         document.getElementById("loginForm").addEventListener("submit", function (e) {
@@ -27,15 +33,20 @@
             let user = users.find(u => u.email === email && u.password === password);
 
             if (!user) {
-                alert("Invalid email or password");
+                Swal.fire({
+                    icon: "error",
+                    title: "Oops...",
+                    text: "Invalid email or password",
+                });
                 return;
             }
 
             localStorage.setItem("loggedUser", JSON.stringify(user));
             window.location.href = "index.html";
-            
         });
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 </body>
 
 </html>
