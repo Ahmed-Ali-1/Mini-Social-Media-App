@@ -369,6 +369,3 @@ function renderAll() {
 
 // ---------------- INITIAL LOAD ----------------
 renderAll();
-
-
-
