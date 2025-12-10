@@ -211,8 +211,9 @@ textarea {
     border-radius: 6px;
     outline: none;
 }
-.modal-box input{
-      background: #ffffffe0;
+
+.modal-box input {
+    background: #ffffffe0;
 }
 
 
@@ -241,7 +242,6 @@ textarea {
 .filter {
     padding: 10px;
     border: 2px solid rgba(124, 58, 237, 0.09);
-    flex: 1;
     font-size: 14px;
     outline: none;
     cursor: pointer;
@@ -386,7 +386,7 @@ textarea {
 }
 
 .singleModalComment {
-    background: #d2d6dba1;
+    background: #ffffffe0;
     padding: 8px;
     margin-top: 5px;
     border-radius: 8px;
