@@ -84,7 +84,7 @@
         gap: 12px;
     }
 
-    #navbarMainUl{
+    #navbarMainUl {
         display: flex;
         list-style: none;
         align-items: center;
@@ -154,6 +154,17 @@
         color: var(--text);
     }
 
+
+    .menu_icon {
+        display: none;
+    
+
+    }
+
+    .menu_icon i {
+        font-size: 22px;
+        color: var(--text);
+    }
 
     /* ----------DASHBOARD-PAGE--------- */
     /* ----------DASHBOARD-SECTION---------- */

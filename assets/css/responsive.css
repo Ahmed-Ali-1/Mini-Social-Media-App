@@ -14,22 +14,25 @@
         padding-inline: 1rem;
     }
 
-    #navbarMainUl {
-        position: absolute;
-        top: 74px;
-        left: 0;
-        right: 0;
-        gap: 20px;
-        align-items: center;
-        flex-direction: column;
-        overflow: hidden;
-        z-index: 100;
-        background: linear-gradient(180deg, rgba(255, 255, 255, 1));
-        backdrop-filter: blur(10px);
-        box-shadow: var(--shadow);
-        border-radius: 0 0 18px 18px;
+    .menu_icon {
+        display: block;
+
     }
 
+    /* #navbarMainUl {
+        position: absolute;
+        background-color: #fff;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        overflow: hidden;
+        z-index: 111;
+        height: 100vh;
+        top: 72px;
+        padding: 14px 0;
+        right: 0px;
+        transition: 1s;
+
+    } */
 }
 
-@media (max-width: 540px) {}
