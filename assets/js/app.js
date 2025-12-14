@@ -195,14 +195,6 @@ function loadAllPosts() {
                         <h4>${post.userName}</h4>
                         <p>${post.time}</p>
                     </div>
-
-                    <div class="postBtnContainer">
-                        ${
-                          post.userEmail === loggedUser.email
-                            ? `<button class="postDeleteBtn" onclick="onePostDelete(${post.id})">Delete</button>`
-                            : ""
-                        }
-                    </div>
                 </div>
 
                 <h4 class="postTitle">${post.title}</h4>
