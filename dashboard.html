@@ -24,16 +24,27 @@
         </div>
 
         <nav class="navbarMain" aria-label="Main navigation">
-            <a href="./index.html">Home</a>
-            <a href="./dashboard.html" class="active">Dashboard</a>
-            <div class="user-block" id="userBlock">
-                <span id="welcomeText">Hello</span>
-                <button id="logoutBtn" style="display:none;">Logout</button>
-            </div>
+            <ul id="navbarMainUl">
+                <li>
+                    <a href="./index.html">Home</a>
+                </li>
+                <li>
+                    <a href="./dashboard.html" class="active">Dashboard</a>
+                </li>
+                <div class="user-block" id="userBlock">
+                    <span id="welcomeText">Hello</span>
+                    <button id="logoutBtn" style="display:none;">Logout</button>
+                </div>
+            </ul>
+
+
 
             <button id="themeBtn" class="icon-btn" aria-pressed="false" title="Toggle theme">
                 <i class="fa-solid fa-sun"></i>
             </button>
+            <div class="menu_icon" id="menuIcon">
+                <i class="fa-solid fa-bars" onclick="toggleMenu()"></i>
+            </div>
         </nav>
     </header>
 
@@ -41,7 +52,7 @@
         <section class="Dashboard wrapper">
             <div class="dashboardDiv">
                 <h1>Your Dashboard</h1>
-                <div>
+                <div class="dashboardSearchBar">
                     <button id="openBtn" class="create-btn" onclick="openCreatePostModal()">+ Create Post</button>
                     <input type="text" id="searchInput" class="search" placeholder="Search posts...">
 

@@ -1,3 +1,30 @@
+let navbarMainUl = document.getElementById("navbarMainUl");
+let menuIcon = document.getElementById("menuIcon");
+let icon = menuIcon.querySelector("i");
+
+navbarMainUl.style.maxHeight = "0px";
+
+function toggleMenu() {
+  if (navbarMainUl.style.maxHeight == "0px") {
+    navbarMainUl.style.maxHeight = "300px";
+    icon.classList.remove("fa-bars");
+    icon.classList.add("fa-xmark");
+  } else {
+    navbarMainUl.style.maxHeight = "0px";
+    icon.classList.remove("fa-xmark");
+    icon.classList.add("fa-bars");
+  }
+}
+
+
+
+
+
+
+
+
+
+
 // ---------------- LOGIN ------------------
 let loggedUser = JSON.parse(localStorage.getItem("loggedUser"));
 

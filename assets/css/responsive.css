@@ -2,90 +2,34 @@
     .tagline {
         display: none;
     }
-}
-
-@media (max-width: 900px) {
-
-    .app-header {
-        flex-wrap: wrap;
-        gap: 14px;
-        padding: 1rem;
-        justify-content: center;
-        text-align: center;
-    }
-
-    .navbarMain {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    .user-block {
-        justify-content: center;
-    }
 
     .dashboardDiv {
-        display: flex;
         flex-direction: column;
+        gap: 16px;
+    }
+}
+
+@media (max-width: 768px) {
+    .app-header {
+        padding-inline: 1rem;
+    }
+
+    #navbarMainUl {
+        position: absolute;
+        top: 74px;
+        left: 0;
+        right: 0;
         gap: 20px;
         align-items: center;
-    }
-}
-
-/* Mobile */
-@media (max-width: 600px) {
-
-    .logoDiv h1 {
-        font-size: 18px;
-    }
-
-    .navbarMain a {
-        padding: 6px 10px;
-        font-size: 14px;
-    }
-
-    .postDiv img {
-        height: 160px;
-    }
-
-    .postContentDiv {
-        padding: 14px;
-    }
-
-    .postTitleContainer h3 {
-        font-size: 16px;
-    }
-
-    .descriptionDiv {
-        max-height: 50px;
-    }
-
-    .commentModalBox {
-        max-width: 90%;
-    }
-
-    .search,
-    .filter {
-        width: 100%;
-        display: flex;
-    }
-}
-
-/* EXTRA SMALL MOBILE */
-@media (max-width: 380px) {
-    .navbarMain {
-        gap: 6px;
-    }
-
-    .user-block {
-        /* flex-direction: column; */
-        gap: 6px;
-    }
-
-    .modalInputBox {
         flex-direction: column;
+        overflow: hidden;
+        z-index: 100;
+        background: linear-gradient(180deg, rgba(255, 255, 255, 1));
+        backdrop-filter: blur(10px);
+        box-shadow: var(--shadow);
+        border-radius: 0 0 18px 18px;
     }
 
-    .modalAddBtn {
-        width: 100%;
-    }
 }
+
+@media (max-width: 540px) {}

@@ -84,6 +84,12 @@
         gap: 12px;
     }
 
+    #navbarMainUl{
+        display: flex;
+        list-style: none;
+        align-items: center;
+    }
+
     .navbarMain a {
         padding: 8px 12px;
         border-radius: 10px;
@@ -156,7 +162,6 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        flex-wrap: wrap;
         margin: 25px 0;
         gap: 12px;
     }
