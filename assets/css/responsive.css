@@ -10,8 +10,19 @@
 }
 
 @media (max-width: 768px) {
+    .navbarMain{
+        gap: 8px;
+    }
     .app-header {
         padding-inline: 1rem;
+        min-height: 10vh;
+        gap: 10px;
+    }
+
+
+    .logoDiv h1 {
+        font-size: 16px;
+        font-weight: 600;
     }
 
     .menu_icon {
@@ -19,20 +30,37 @@
 
     }
 
-    /* #navbarMainUl {
-        position: absolute;
-        background-color: #fff;
-        display: flex;
-        flex-direction: column;
-        gap: 16px;
-        overflow: hidden;
-        z-index: 111;
-        height: 100vh;
-        top: 72px;
-        padding: 14px 0;
-        right: 0px;
-        transition: 1s;
+    .user-block {
+        padding: 6px 10px;
+        gap: 6px;
+    }
 
-    } */
+    .icon-btn {
+        width: 36px;
+        height: 36px;
+       
+    }
+    .user-block #welcomeText {
+    font-size: 12px;
+   
 }
 
+    #navbarMainUl {
+        position: absolute;
+        /* background: linear-gradient(180deg, rgba(255, 255, 255, 1)); */
+        background-color: #f9f9fb;
+        box-shadow: var(--shadow);
+        top: 64px;
+        left: 0;
+        width: 100%;
+        display: flex;
+
+        backdrop-filter: blur(10px);
+
+        justify-content: center;
+        align-items: center;
+        /* gap: 24px; */
+        z-index: 100;
+        padding: 16px 0;
+    }
+}
