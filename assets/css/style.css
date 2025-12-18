@@ -45,8 +45,7 @@
         align-items: center;
         justify-content: space-between;
         gap: 14px;
-        padding-inline: 1.5rem;
-        min-height: 12vh;
+        padding: 0.6rem 1.5rem;
         background: linear-gradient(180deg, rgba(255, 255, 255, 0.9), transparent);
         backdrop-filter: blur(6px);
         box-shadow: var(--shadow);
@@ -157,7 +156,7 @@
 
     .menu_icon {
         display: none;
-    
+
 
     }
 
@@ -172,10 +171,16 @@
     .dashboardDiv {
         display: flex;
         justify-content: space-between;
-        align-items: center;
         margin: 25px 0;
-        gap: 12px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 14px;
     }
+
+    .dashboardDiv h1 {
+        font-size: 20px;
+    }
+
 
     .create-btn {
         padding: 8px 20px;
@@ -185,10 +190,24 @@
         background: linear-gradient(90deg, rgba(124, 58, 237, 0.1), rgba(6, 182, 212, 0.1));
         border: 2px solid rgba(124, 58, 237, 0.09);
         transition: 0.2s;
+        width: 100%;
     }
 
     .create-btn:hover {
         transform: translateY(-2px);
+    }
+
+    .dashboardSearchBar {
+        width: 100%;
+        display: flex;
+        gap: 6px;
+        flex-wrap: wrap;
+    }
+
+    .dashboardSearchBar input,
+    .dashboardSearchBar select,
+    .dashboardSearchBar button {
+        min-height: 44px;
     }
 
     /* Modal BG */
@@ -205,12 +224,12 @@
         backdrop-filter: blur(10px);
         justify-content: center;
         align-items: center;
-        z-index: 0;
+        z-index: 100;
     }
 
     .modal-box,
     .commentModalBox {
-        width: 100%;
+        width: 90%;
         max-width: 400px;
         display: flex;
         flex-direction: column;
@@ -281,6 +300,7 @@
         border: 2px solid rgba(124, 58, 237, 0.09);
         outline: none;
         border-radius: 12px;
+        width: 100%;
     }
 
 
@@ -302,7 +322,7 @@
         border: 2px solid rgba(124, 58, 237, 0.09);
         background: linear-gradient(90deg, rgba(124, 58, 237, 0.09), rgba(6, 182, 212, 0.09));
         border-radius: 14px;
-        width: 320px;
+        width: 300px;
         overflow: hidden;
         display: flex;
         flex-direction: column;
@@ -321,7 +341,7 @@
         width: 100%;
         border-top-left-radius: 14px;
         border-top-right-radius: 14px;
-        height: 200px;
+        height: 180px;
         object-fit: cover;
     }
 
@@ -357,7 +377,7 @@
     }
 
     .postTitle {
-        font-size: 18px;
+        font-size: 16px;
         font-weight: 600;
         text-transform: capitalize;
     }
@@ -365,7 +385,7 @@
     .descriptionDiv {
         overflow-y: auto;
         max-height: 45px;
-        font-size: 14px;
+        font-size: 13px;
         margin: 4px 0 20px;
         color: #000;
     }

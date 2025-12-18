@@ -3,19 +3,15 @@
         display: none;
     }
 
-    .dashboardDiv {
-        flex-direction: column;
-        gap: 16px;
-    }
 }
 
 @media (max-width: 768px) {
-    .navbarMain{
+    .navbarMain {
         gap: 8px;
     }
+
     .app-header {
-        padding-inline: 1rem;
-        min-height: 10vh;
+        padding: 0.4rem 1rem;
         gap: 10px;
     }
 
@@ -38,29 +34,79 @@
     .icon-btn {
         width: 36px;
         height: 36px;
-       
+
     }
+
     .user-block #welcomeText {
-    font-size: 12px;
-   
-}
+        font-size: 12px;
+
+    }
+
+    .wrapper {
+        margin-top: 74px;
+    }
 
     #navbarMainUl {
         position: absolute;
-        /* background: linear-gradient(180deg, rgba(255, 255, 255, 1)); */
         background-color: #f9f9fb;
         box-shadow: var(--shadow);
-        top: 64px;
+        top: 62px;
         left: 0;
         width: 100%;
         display: flex;
-
         backdrop-filter: blur(10px);
-
         justify-content: center;
         align-items: center;
-        /* gap: 24px; */
-        z-index: 100;
+        gap: 16px;
         padding: 16px 0;
     }
 }
+
+
+@media (min-width: 576px) {
+
+    .postDiv {
+        max-width: 420px;
+    }
+
+    .dashboardDiv h1 {
+        font-size: 22px;
+    }
+}
+
+
+
+@media (min-width: 768px) {
+
+    .dashboardDiv {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .dashboardSearchBar {
+        width: auto;
+        flex-wrap: nowrap;
+    }
+
+    .create-btn {
+        width: auto;
+    }
+
+    .search {
+        width: 220px;
+    }
+
+    .filter {
+        width: 160px;
+    }
+
+    .modal-box,
+    .commentModalBox {
+        width: 100%;
+    }
+
+
+}
+
+
