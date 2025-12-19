@@ -11,7 +11,7 @@
     }
 
     .app-header {
-        padding: 0.4rem 1rem;
+        padding: 0.6rem 1rem;
         gap: 10px;
     }
 
@@ -49,16 +49,14 @@
     #navbarMainUl {
         position: absolute;
         background-color: #f9f9fb;
-        box-shadow: var(--shadow);
-        top: 62px;
+        top: 66px;
         left: 0;
         width: 100%;
         display: flex;
-        backdrop-filter: blur(10px);
         justify-content: center;
         align-items: center;
         gap: 16px;
-        padding: 16px 0;
+        padding: 14px 0;
     }
 }
 
